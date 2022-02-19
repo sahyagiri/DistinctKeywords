@@ -29,6 +29,8 @@ doc = """
          the learning algorithm to generalize from the training data to unseen situations in a 
          'reasonable' way (see inductive bias).
       """
+
+#initialize the class       
 distinct_keywords=DistinctKeywords()
 distinct_keywords.get_keywords(doc)
 
