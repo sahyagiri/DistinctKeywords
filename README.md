@@ -8,7 +8,12 @@ After creating word2vec, the words are mapped to a hilbert space and the results
 
 ## Installation dependancies 
 NLTK and spacy with en_core_web_sm to be loaded before usage 
+Download the following files 
+1. [Hilbert Lookup Dictionary](https://github.com/sahyagiri/DistinctKeywords/blob/main/hilbert_lookup_dictionary_simplewiki_17_2_22_v3.pickle.gz?raw=true)
 
+2. [KeyWordProcessor](https://github.com/sahyagiri/DistinctKeywords/blob/main/keyword_processor_simple_wiki2022.pickle?raw=true)
+
+3. [Stop Words](https://github.com/sahyagiri/DistinctKeywords/blob/main/stopwords.pickle?raw=true)
 ## Benchmarks
 
 Currently this is tested against KPTimes test dataset (20000 articles). A recall score of 30% is achieved when compared to the manual keywords given in the dataset. 
