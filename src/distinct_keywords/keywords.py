@@ -79,7 +79,7 @@ class DistinctKeywords:
             keywords.append(trie[i].popitem(index=-1)[0])
         keywords=[i.replace('_',' ') for i in keywords if i in input_document]
         if include_proper_nouns:
-            proper_nouns=[strip_non_alphanum(tok.text) for tok in self.nlp(input_document).noun_chunks]
+            proper_nouns=[strip_multiple_whitespaces(strip_non_alphanum(tok.text)) for tok in self.nlp(input_document).noun_chunks]
             proper_nouns=[i for i in proper_nouns if i.lower() not in self.stop_words]
             top_proper_nouns={i[0] for i in Counter(proper_nouns).most_common(max_proper_noun_count)}
             return list(set(keywords).union(top_proper_nouns))

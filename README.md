@@ -7,8 +7,13 @@ Hilbert curve act as a Locality-sensitive hashing.
 After creating word2vec, the words are mapped to a hilbert space and the results are stored in a key-value pair (every word has a hilbert hash). Now for a new document, the words and phrases are cleaned, hashed using the dictionary. One word from each different prefix is then selected using wordnet ranking from NLTK (rare words are prioritized). The implementation of grouping and look up is made fast using Trie and SortedDict
 
 ## Installation dependancies 
-NLTK and spacy with en_core_web_sm to be loaded before usage 
-Download the following files 
+NLTK and spacy with en_core_web_sm to be loaded before usage. 
+
+pip install distinct-keywords
+
+
+Download the following files and keep it in the current working directory. 
+
 1. [Hilbert Lookup Dictionary](https://github.com/sahyagiri/DistinctKeywords/blob/main/hilbert_lookup_dictionary_simplewiki_17_2_22_v3.pickle.gz?raw=true)
 
 2. [KeyWordProcessor](https://github.com/sahyagiri/DistinctKeywords/blob/main/keyword_processor_simple_wiki2022.pickle?raw=true)
