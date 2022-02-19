@@ -30,7 +30,7 @@ doc = """
          'reasonable' way (see inductive bias).
       """
 
-#initialize the class       
+# Initialize the class       
 distinct_keywords=DistinctKeywords()
 
 distinct_keywords.get_keywords(doc)
