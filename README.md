@@ -32,6 +32,7 @@ doc = """
 
 #initialize the class       
 distinct_keywords=DistinctKeywords()
+
 distinct_keywords.get_keywords(doc)
 
 ## Output
