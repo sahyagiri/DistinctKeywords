@@ -30,7 +30,7 @@ Currently this is tested against KPTimes test dataset (20000 articles). A recall
 
 ## Usage
 ```
-from keywords import DistinctKeywords
+from distinct_keywords.keywords import DistinctKeywords 
 
 doc = """
          Supervised learning is the machine learning task of learning a function that
