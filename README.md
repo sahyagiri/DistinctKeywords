@@ -5,12 +5,15 @@ Hilbert curve act as a Locality-sensitive hashing.
 ## Methodology
 
 After creating word2vec, the words are mapped to a hilbert space and the results are stored in a key-value pair (every word has a hilbert hash). Now for a new document, the words and phrases are cleaned, hashed using the dictionary. One word from each different prefix is then selected using wordnet ranking from NLTK (rare words are prioritized). The implementation of grouping and look up is made fast using Trie and SortedDict
+## Installation Instructions
+1. conda create -n  keyphrases python=3.8 --no-default-packages
+2. conda activate keyphrases
+3. pip install distinct-keywords
+4. python -m spacy download en_core_web_sm
+5. conda install --channel=conda-forge nb_conda_kernels jupyter
+6. jupyter notebook 
 
-## Installation dependancies 
-NLTK and spacy with en_core_web_sm to be loaded before usage. 
-
-pip install distinct-keywords
-
+## Model Files for processing (English)
 
 Download the following files and keep it in the current working directory. 
 
@@ -19,12 +22,13 @@ Download the following files and keep it in the current working directory.
 2. [KeyWordProcessor](https://github.com/sahyagiri/DistinctKeywords/blob/main/keyword_processor_simple_wiki2022.pickle?raw=true)
 
 3. [Stop Words](https://github.com/sahyagiri/DistinctKeywords/blob/main/stopwords.pickle?raw=true)
+
 ## Benchmarks
 
 Currently this is tested against KPTimes test dataset (20000 articles). A recall score of 30% is achieved when compared to the manual keywords given in the dataset. 
 
 ## Usage
-
+```
 from keywords import DistinctKeywords
 
 doc = """
@@ -40,11 +44,13 @@ doc = """
          'reasonable' way (see inductive bias).
       """
 
-# Initialize the class       
+
+
 distinct_keywords=DistinctKeywords()
 
 distinct_keywords.get_keywords(doc)
 
+  ```
 ## Output
 
 ['machine learning',
