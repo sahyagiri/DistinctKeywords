@@ -53,10 +53,16 @@ class DistinctKeywords:
         except:
             return 0
    
-    def get_keywords(self,input_document:str,min_length=2,include_proper_nouns=True,max_proper_noun_count=5):
-        doc=self.__preprocess_no_lemmatization(input_document)
+    def get_keywords_from_text(self, 
+                    input_document:str,
+                    doc,
+                    min_length=2,
+                    include_proper_nouns=True,
+                    max_proper_noun_count=5):
+
+        input_text=self.__preprocess_no_lemmatization(input_document)
         trie=Trie(string.ascii_lowercase+string.digits)
-        for word in doc.split():
+        for word in input_text.split():
             if word in self.stop_words:
                 continue 
             try:
@@ -79,10 +85,32 @@ class DistinctKeywords:
             keywords.append(trie[i].popitem(index=-1)[0])
         keywords=[i.replace('_',' ') for i in keywords if i in input_document]
         if include_proper_nouns:
-            proper_nouns=[strip_multiple_whitespaces(strip_non_alphanum(tok.text)) for tok in self.nlp(input_document).noun_chunks]
+            proper_nouns=[strip_multiple_whitespaces(strip_non_alphanum(tok.text)) for tok in doc.noun_chunks]
             proper_nouns=[i for i in proper_nouns if i.lower() not in self.stop_words]
             top_proper_nouns={i[0] for i in Counter(proper_nouns).most_common(max_proper_noun_count)}
             return list(set(keywords).union(top_proper_nouns))
         return keywords
 
-    
+    def get_keywords(self,
+                    input_documents,
+                    min_length=2,
+                    include_proper_nouns=True,
+                    max_proper_noun_count=5):
+
+        if isinstance(input_documents, str):
+            input_documents = [input_documents]
+
+        keywords_for_all_input_samples = []
+
+        for doc in self.nlp.pipe(input_documents):
+
+            input_document = doc.text
+            document_keywords = self.get_keywords_from_text(input_document=input_document,
+                                                            doc=doc,
+                                                            min_length=min_length,
+                                                            include_proper_nouns=include_proper_nouns,
+                                                            max_proper_noun_count=max_proper_noun_count)
+
+            keywords_for_all_input_samples.append(document_keywords)
+
+        return keywords_for_all_input_samples
