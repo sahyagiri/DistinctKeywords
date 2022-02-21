@@ -26,11 +26,18 @@ Download the following files and keep it in the current working directory.
 
 ## Benchmarks
 
-Currently this is tested against KPTimes test dataset (20000 articles). A recall score of 30% is achieved when compared to the manual keywords given in the dataset. 
+Currently this is tested against KPTimes test dataset (20000 articles). A recall score of 31% is achieved when compared to the manual keywords given in the dataset.
+Steps to arrive at the score: 
+1. Used both algorithms
+2.  Results of algorithms and original keywords were cleaned (lower case, space removal, character removal, but no lemmatization)
+3. Take intersection of original keywords and generated keyword **word banks** (individual words)
+4. For each prediction compare the length of intersecting words with length of total keyword words
+Output is given below 
+![enter image description here](https://github.com/sahyagiri/DistinctKeywords/raw/main/benchmark_keybert_distinct_keywords_kptimes.png) 
 
 ## Usage
 ```
-from distinct_keywords.keywords import DistinctKeywords 
+from keywords import DistinctKeywords
 
 doc = """
          Supervised learning is the machine learning task of learning a function that
@@ -69,4 +76,4 @@ distinct_keywords.get_keywords(doc)
 
 ## German Model (On test) 
 I have added a german model based on word2vec found at https://devmount.github.io/GermanWordEmbeddings/
-You can find it in the example folder. If anyone here can test it/ suggest a better light German word2vec file, please share 
+You can find it in the example folder 
