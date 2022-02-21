@@ -5,6 +5,7 @@ Hilbert curve act as a Locality-sensitive hashing.
 ## Methodology
 
 After creating word2vec, the words are mapped to a hilbert space and the results are stored in a key-value pair (every word has a hilbert hash). Now for a new document, the words and phrases are cleaned, hashed using the dictionary. One word from each different prefix is then selected using wordnet ranking from NLTK (rare words are prioritized). The implementation of grouping and look up is made fast using Trie and SortedDict
+![enter image description here](https://github.com/sahyagiri/DistinctKeywords/raw/main/steps_hilbert_hashing.png)
 ## Installation Instructions
 1. conda create -n  keyphrases python=3.8 --no-default-packages
 2. conda activate keyphrases
@@ -65,3 +66,7 @@ distinct_keywords.get_keywords(doc)
  'algorithm',
  'unseen',
  'training']
+
+## German Model (On test) 
+I have added a german model based on word2vec found at https://devmount.github.io/GermanWordEmbeddings/
+You can find it in the example folder 
