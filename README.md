@@ -80,7 +80,7 @@ distinct_keywords.get_keywords(doc)
 from distinct_keywords.keywords import DistinctKeywords
 
 #can also use it to extract keywords for multiple strings at once
-docs = ["Supervised learning is the machine learning task of learning a function that
+docs = ["""Supervised learning is the machine learning task of learning a function that
          maps an input to an output based on example input-output pairs. It infers a
          function from labeled training data consisting of a set of training examples.
          In supervised learning, each example is a pair consisting of an input object
@@ -89,52 +89,51 @@ docs = ["Supervised learning is the machine learning task of learning a function
          which can be used for mapping new examples. An optimal scenario will allow for the 
          algorithm to correctly determine the class labels for unseen instances. This requires 
          the learning algorithm to generalize from the training data to unseen situations in a 
-         'reasonable' way (see inductive bias).",
-         "K-Nearest Neighbours is one of the most basic yet essential classification algorithms in Machine Learning. It belongs to the supervised learning domain and finds intense application in pattern recognition, data mining and intrusion detection. It is widely disposable in real-life scenarios since it is non-parametric, meaning, it does not make any underlying assumptions about the distribution of data (as opposed to other algorithms such as GMM, which assume a Gaussian distribution of the given data)."]
+         'reasonable' way (see inductive bias).""",
+         """K-Nearest Neighbours is one of the most basic yet essential classification algorithms
+          in Machine Learning. It belongs to the supervised learning domain and finds intense application 
+          in pattern recognition, data mining and intrusion detection. It is widely disposable in real-life 
+          scenarios since it is non-parametric, meaning, it does not make any underlying assumptions about 
+          the distribution of data (as opposed to other algorithms such as GMM, which assume a Gaussian 
+          distribution of the given data)."""]
+
+distinct_keywords=DistinctKeywords()
+
+distinct_keywords.get_keywords(docs)
 ```
 ## Output
 
-[['examples',
-  'based',
-  'supervised',
-  'bias',
-  'training',
-  'maps',
-  'a function',
-  'the machine',
+[['supervisory',
   'typically',
-  'pairs',
-  'reasonable',
-  'vector',
-  'called',
-  'the training data',
-  'scenario',
-  'learning',
-  'unseen',
-  'Supervised learning',
-  'task',
-  'inductive',
-  'mapping',
   'algorithm',
-  'machine learning',
-  'supervisory'],
- ['opposed',
   'supervised',
-  'disposable',
-  'learning',
-  'Machine Learning',
-  'the most basic yet essential classification algorithms',
+  'unseen',
+  'machine learning',
+  'the training data',
+  'the machine',
+  'vector',
+  'training',
+  'task',
+  'bias',
+  'a function',
+  'Supervised learning',
+  'pairs',
+  'mapping'],
+ ['meaning',
+  'supervised',
+  'opposed',
   'intrusion',
-  'intense application',
-  'the supervised learning domain',
-  'detection',
-  'pattern recognition',
+  'learning',
+  'K Nearest Neighbours',
   'parametric',
+  'the most basic yet essential classification algorithms',
+  'pattern recognition',
+  'detection',
+  'the supervised learning domain',
+  'intense application',
   'underlying',
-  'meaning',
-  'data',
-  'K Nearest Neighbours']]
-  
+  'Machine Learning']]
+
 ## German Model (On test) 
 I have added a german model based on word2vec found at https://devmount.github.io/GermanWordEmbeddings/
 You can find it in the example folder 
