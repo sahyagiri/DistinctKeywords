@@ -39,7 +39,7 @@ Output is given below
 
 ## Usage
 ```
-from keywords import DistinctKeywords
+from distinct_keywords.keywords import DistinctKeywords 
 
 doc = """
          Supervised learning is the machine learning task of learning a function that
