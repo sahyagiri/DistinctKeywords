@@ -28,11 +28,13 @@ Download the following files and keep it in the current working directory.
 
 Currently this is tested against KPTimes test dataset (20000 articles). A recall score of 31% is achieved when compared to the manual keywords given in the dataset.
 Steps to arrive at the score: 
-1. Used both algorithms
+1. Used both algorithms. Keybert was ran with additional parameter top_n=16 as the length of dstinct_keywords at 75% level was around 15. 
 2.  Results of algorithms and original keywords were cleaned (lower case, space removal, character removal, but no lemmatization)
 3. Take intersection of original keywords and generated keyword **word banks** (individual words)
 4. For each prediction compare the length of intersecting words with length of total keyword words
+
 Output is given below 
+
 ![enter image description here](https://github.com/sahyagiri/DistinctKeywords/raw/main/benchmark_keybert_distinct_keywords_kptimes.png) 
 
 ## Usage
