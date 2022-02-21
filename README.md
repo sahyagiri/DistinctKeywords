@@ -69,4 +69,4 @@ distinct_keywords.get_keywords(doc)
 
 ## German Model (On test) 
 I have added a german model based on word2vec found at https://devmount.github.io/GermanWordEmbeddings/
-You can find it in the example folder 
+You can find it in the example folder. If anyone here can test it/ suggest a better light German word2vec file, please share 
