@@ -14,7 +14,7 @@ Please visit the [blog post](https://dossiers.page/semantically-distinct-key-phr
 3. French (on test. Need support from native speakers). 
 4. Italian (on test. Need support from native speakers). 
 5. Portuguese (on test. Need support from native speakers). 
-
+6. Spanish (on test. Need support from native speakers).
 
 ##  Installation Instructions
 
