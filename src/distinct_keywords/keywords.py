@@ -1,3 +1,4 @@
+from ast import keyword
 import warnings
 warnings.filterwarnings('ignore')
 import joblib
@@ -92,17 +93,29 @@ class DistinctKeywords:
         return keywords
 
     def get_keywords(self,
-                    input_documents,
+                    input_document:str,
                     min_length=2,
                     include_proper_nouns=True,
                     max_proper_noun_count=5):
+        
+        doc = self.nlp(input_document)
+        keywords = self.get_keywords_from_text(input_document=input_document,
+                                                doc=doc,
+                                                min_length=min_length,
+                                                include_proper_nouns=include_proper_nouns,
+                                                max_proper_noun_count=max_proper_noun_count)
 
-        if isinstance(input_documents, str):
-            input_documents = [input_documents]
+        return keywords
+
+    def get_multiple_doc_keywords(self,
+                                  docs:list,
+                                  min_length=2,
+                                  include_proper_nouns=True,
+                                  max_proper_noun_count=5):
 
         keywords_for_all_input_samples = []
 
-        for doc in self.nlp.pipe(input_documents):
+        for doc in self.nlp.pipe(docs):
 
             input_document = doc.text
             document_keywords = self.get_keywords_from_text(input_document=input_document,
