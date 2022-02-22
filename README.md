@@ -128,3 +128,24 @@ Steps to arrive at the score:
 Output is given below
 
 ![benchmark keybert vs distinctkeywords with kptimes](https://github.com/sahyagiri/DistinctKeywords/raw/main/benchmark_keybert_distinct_keywords_kptimes.png)
+
+
+## Word2vec citations 
+1. Spanish:  Aitor Almeida, & Aritz Bilbao. (2018). Spanish 3B words Word2Vec Embeddings (1.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.1410403
+2. German: @thesis{mueller2015,
+  author = {{Müller}, Andreas},
+  title  = "{Analyse von Wort-Vektoren deutscher Textkorpora}",
+  school = {Technische Universität Berlin},
+  year   = 2015,
+  month  = jun,
+  type   = {Bachelor's Thesis},
+  url    = {https://devmount.github.io/GermanWordEmbeddings}
+}
+
+3. French: @misc{fauconnier_2015,
+	author = {Fauconnier, Jean-Philippe},
+	title = {French Word Embeddings},
+	url = {http://fauconnier.github.io},
+	year = {2015}}
+
+4. Italian: Nordic Language Processing Laboratory (NLPL) (http://vectors.nlpl.eu/repository/)
