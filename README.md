@@ -25,8 +25,12 @@ Hilbert curve act as a Locality-sensitive hashing.
 4. python -m spacy download en_core_web_sm
 
 5. conda install --channel=conda-forge nb_conda_kernels jupyter
-
-6. jupyter notebook
+6. Optional multi-lingual support 
+        ```
+        import nltk
+        nltk.download('omw')
+        ```
+7. jupyter notebook
 
 
 ##  Getting started
@@ -117,4 +121,4 @@ Steps to arrive at the score:
 
 Output is given below
 
-![enter image description here](https://github.com/sahyagiri/DistinctKeywords/raw/main/benchmark_keybert_distinct_keywords_kptimes.png)
+![benchmark keybert vs distinctkeywords with kptimes](https://github.com/sahyagiri/DistinctKeywords/raw/main/benchmark_keybert_distinct_keywords_kptimes.png)

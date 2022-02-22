@@ -23,7 +23,7 @@ class DistinctKeywords:
     def __init__(self,
     keyword_dictionary_file='hilbert_lookup_dictionary_simplewiki_17_2_22_v3.pickle.gz',
     keyword_processor_file='keyword_processor_simple_wiki2022.pickle',
-    stop_words_set_file="stopwords.pickle") -> None:
+    stop_words_set_file="stopwords.pickle",language='eng') -> None:
         self.hilbert_lookup_dictionary=joblib.load(keyword_dictionary_file)
         self.hilbert_reverse_lookup_dictionary = {v: k for k, v in self.hilbert_lookup_dictionary.items()}
         self.hashlength=len(list(self.hilbert_lookup_dictionary.values())[0])
@@ -31,8 +31,7 @@ class DistinctKeywords:
         self.stop_words=joblib.load(stop_words_set_file)
         self.keyword_processor=joblib.load(keyword_processor_file)
         self.min_length=20
-        self.sum=0
-        self.count=0
+        self.language=language
     def __preprocess_no_lemmatization(self,x):
         x=str(x)
         x=x.lower()
@@ -49,7 +48,7 @@ class DistinctKeywords:
 
     def __get_wordnet_count(self,word):
         try:
-            return wordnet.synsets(word)[0].lemmas()[0].count()
+            return wordnet.synsets(word,lang=self.language)[0].lemmas()[0].count()
         except:
             return 0
    
