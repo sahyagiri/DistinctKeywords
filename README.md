@@ -2,10 +2,11 @@
 This is a utility function to extract semantically distinct keywords. This is an unsupervised method based on word2vec. Current implementation used a word2vec model trained in simplewiki. 
 Hilbert curve act as a Locality-sensitive hashing. 
 
-## Methodology
+### Supported Languages (jupyter notebooks available in examples)
+1. English (default)
+2. German (on test. Need support from native speakers)
+3. French (on test. Need support from native speakers)
 
-After creating word2vec, the words are mapped to a hilbert space and the results are stored in a key-value pair (every word has a hilbert hash). Now for a new document, the words and phrases are cleaned, hashed using the dictionary. One word from each different prefix is then selected using wordnet ranking from NLTK (rare words are prioritized). The implementation of grouping and look up is made fast using Trie and SortedDict
-![enter image description here](https://github.com/sahyagiri/DistinctKeywords/raw/main/steps_hilbert_hashing.png)
 ## Installation Instructions
 1. conda create -n  keyphrases python=3.8 --no-default-packages
 2. conda activate keyphrases
@@ -14,28 +15,11 @@ After creating word2vec, the words are mapped to a hilbert space and the results
 5. conda install --channel=conda-forge nb_conda_kernels jupyter
 6. jupyter notebook 
 
-## Model Files for processing (English)
+## Getting started
 
-Download the following files and keep it in the current working directory. 
-
-1. [Hilbert Lookup Dictionary](https://github.com/sahyagiri/DistinctKeywords/blob/main/hilbert_lookup_dictionary_simplewiki_17_2_22_v3.pickle.gz?raw=true)
-
-2. [KeyWordProcessor](https://github.com/sahyagiri/DistinctKeywords/blob/main/keyword_processor_simple_wiki2022.pickle?raw=true)
-
-3. [Stop Words](https://github.com/sahyagiri/DistinctKeywords/blob/main/stopwords.pickle?raw=true)
-
-## Benchmarks
-
-Currently this is tested against KPTimes test dataset (20000 articles). A recall score of 31% is achieved when compared to the manual keywords given in the dataset.
-Steps to arrive at the score: 
-1. Used both algorithms. Keybert was ran with additional parameter top_n=16 as the length of dstinct_keywords at 75% level was around 15. 
-2.  Results of algorithms and original keywords were cleaned (lower case, space removal, character removal, but no lemmatization)
-3. Take intersection of original keywords and generated keyword **word banks** (individual words)
-4. For each prediction compare the length of intersecting words with length of total keyword words
-
-Output is given below 
-
-![enter image description here](https://github.com/sahyagiri/DistinctKeywords/raw/main/benchmark_keybert_distinct_keywords_kptimes.png) 
+1. Clone the repository
+2. Open the examples folder in jupyter notebook. The subfolders contain the respective language files.
+3. Select the language you wanted to try out
 
 ## Usage
 ```
@@ -76,10 +60,20 @@ distinct_keywords.get_keywords(doc)
  'unseen',
  'training']
 
-## German Model (On test) 
-Added a german model based on word2vec found at https://devmount.github.io/GermanWordEmbeddings/
-You can find it in the example folder 
+## Methodology
 
-## French Model (On test) 
-Added a French model based on word2vec found at https://fauconnier.github.io/
-You can find it in the example folder 
+After creating word2vec, the words are mapped to a hilbert space and the results are stored in a key-value pair (every word has a hilbert hash). Now for a new document, the words and phrases are cleaned, hashed using the dictionary. One word from each different prefix is then selected using wordnet ranking from NLTK (rare words are prioritized). The implementation of grouping and look up is made fast using Trie and SortedDict
+![enter image description here](https://github.com/sahyagiri/DistinctKeywords/raw/main/steps_hilbert_hashing.png)
+
+## Benchmarks
+
+Currently this is tested against KPTimes test dataset (20000 articles). A recall score of 31% is achieved when compared to the manual keywords given in the dataset.
+Steps to arrive at the score: 
+1. Used both algorithms. Keybert was ran with additional parameter top_n=16 as the length of dstinct_keywords at 75% level was around 15. 
+2.  Results of algorithms and original keywords were cleaned (lower case, space removal, character removal, but no lemmatization)
+3. Take intersection of original keywords and generated keyword **word banks** (individual words)
+4. For each prediction compare the length of intersecting words with length of total keyword words
+
+Output is given below 
+
+![enter image description here](https://github.com/sahyagiri/DistinctKeywords/raw/main/benchmark_keybert_distinct_keywords_kptimes.png) 
