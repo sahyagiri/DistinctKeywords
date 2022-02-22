@@ -6,16 +6,13 @@ This is a utility function to extract semantically distinct keywords. This is an
 Hilbert curve act as a Locality-sensitive hashing.
 
   
-
 ###  Supported Languages (jupyter notebooks available in examples)
 
 1. English (default) using custom word2vec trained on simplewiki.
-
-2. German (on test. Need support from native speakers). Using Word2vec from [this link](https://devmount.github.io/GermanWordEmbeddings/)
-
+2. German (on test. Need support from native speakers). Using Word2vec model from [this link](https://devmount.github.io/GermanWordEmbeddings/)
 3. French (on test. Need support from native speakers). Using word2vec model from [this link](https://fauconnier.github.io/)
+4. Italian (on test. Need support from native speakers). Using word2vec model from [this link](http://vectors.nlpl.eu/repository/#) 
 
-  
 
 ##  Installation Instructions
 
@@ -31,27 +28,18 @@ Hilbert curve act as a Locality-sensitive hashing.
 
 6. jupyter notebook
 
-  
 
 ##  Getting started
 
-  
-
 1. Clone the repository
 
-2. Open the examples folder in jupyter notebook. The subfolders contain the respective language files.
+2. Open the examples folder in jupyter notebook. The sub-folders contain the respective language files.
 
 3. Select the language you wanted to try out
 
-  
-
 ##  Usage
-
 ```
-
 from distinct_keywords.keywords import DistinctKeywords
-
-  
 
 doc = """
 
@@ -76,24 +64,11 @@ the learning algorithm to generalize from the training data to unseen situations
 'reasonable' way (see inductive bias).
 
 """
-
-  
-  
-  
-
 distinct_keywords=DistinctKeywords()
-
-  
-
 distinct_keywords.get_keywords(doc)
-
-  
-
 ```
 
 ##  Output
-
-  
 
 ['machine learning',
 
@@ -119,11 +94,7 @@ distinct_keywords.get_keywords(doc)
 
 'training']
 
-  
-
 ##  Methodology
-
-  
 
 After creating word2vec, the words are mapped to a hilbert space and the results are stored in a key-value pair (every word has a hilbert hash). Now for a new document, the words and phrases are cleaned, hashed using the dictionary. One word from each different prefix is then selected using wordnet ranking from NLTK (rare words are prioritized). The implementation of grouping and look up is made fast using Trie and SortedDict
 
@@ -131,7 +102,6 @@ After creating word2vec, the words are mapped to a hilbert space and the results
 
 
 ##  Benchmarks
-
 
 Currently this is tested against KPTimes test dataset (20000 articles). A recall score of 31% is achieved when compared to the manual keywords given in the dataset.
 
