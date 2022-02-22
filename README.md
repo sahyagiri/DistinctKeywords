@@ -149,3 +149,5 @@ Output is given below
 	year = {2015}}
 
 4. Italian: Nordic Language Processing Laboratory (NLPL) (http://vectors.nlpl.eu/repository/)
+
+5. Portuguese: NILC - Interinstitutional Nucleus of Computational Linguistics http://nilc.icmc.usp.br/embeddings
