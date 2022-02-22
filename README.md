@@ -46,6 +46,8 @@ Please visit the [blog post](https://dossiers.page/semantically-distinct-key-phr
 3. Select the language you wanted to try out
 
 ##  Usage
+
+### You need to have the respective language files in current directory.  Please visit examples folder to download and to know how to use them in parameter. 
 ```
 from distinct_keywords.keywords import DistinctKeywords
 
