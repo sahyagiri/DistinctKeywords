@@ -1,9 +1,10 @@
 
 #  DistinctKeywords
 
-This is a utility function to extract semantically distinct keywords. This is an unsupervised method based on word2vec. Current implementation used a word2vec model trained in simplewiki.
+This is a utility function to extract semantically distinct keywords. This is an unsupervised method based on word2vec. Current implementation used a word2vec model trained in simplewiki(for English). Other language models and their sources are given below. 
 
-Hilbert curve act as a Locality-sensitive hashing.
+Please visit the [blog post](https://dossiers.page/semantically-distinct-key-phrase-extraction/) for more details
+
 
   
 ###  Supported Languages (jupyter notebooks available in examples)
@@ -26,9 +27,12 @@ Hilbert curve act as a Locality-sensitive hashing.
 
 5. conda install --channel=conda-forge nb_conda_kernels jupyter
 6. Optional multi-lingual support 
+
         ```
         import nltk
+
         nltk.download('omw')
+
         ```
 7. jupyter notebook
 
