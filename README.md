@@ -77,5 +77,9 @@ distinct_keywords.get_keywords(doc)
  'training']
 
 ## German Model (On test) 
-I have added a german model based on word2vec found at https://devmount.github.io/GermanWordEmbeddings/
+Added a german model based on word2vec found at https://devmount.github.io/GermanWordEmbeddings/
+You can find it in the example folder 
+
+## French Model (On test) 
+Added a French model based on word2vec found at https://fauconnier.github.io/
 You can find it in the example folder 
