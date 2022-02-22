@@ -132,7 +132,7 @@ Output is given below
 
 
 ## Word2vec citations 
-1. Spanish:  Aitor Almeida, & Aritz Bilbao. (2018). Spanish 3B words Word2Vec Embeddings (1.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.1410403
+1. Spanish: Spanish Billion Word Corpus and Embeddings by Cristian Cardellino  https://crscardellino.ar/SBWCE/
 2. German: @thesis{mueller2015,
   author = {{Müller}, Andreas},
   title  = "{Analyse von Wort-Vektoren deutscher Textkorpora}",
