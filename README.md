@@ -7,12 +7,13 @@ Please visit the [blog post](https://dossiers.page/semantically-distinct-key-phr
 
 
   
-###  Supported Languages (jupyter notebooks available in examples)
+###  Supported Languages (jupyter notebooks available in examples). Please see the word2vec citation to know the models used
 
 1. English (default) using custom word2vec trained on simplewiki.
-2. German (on test. Need support from native speakers). Using Word2vec model from [this link](https://devmount.github.io/GermanWordEmbeddings/)
-3. French (on test. Need support from native speakers). Using word2vec model from [this link](https://fauconnier.github.io/)
-4. Italian (on test. Need support from native speakers). Using word2vec model from [this link](http://vectors.nlpl.eu/repository/#) 
+2. German (on test. Need support from native speakers). 
+3. French (on test. Need support from native speakers). 
+4. Italian (on test. Need support from native speakers). 
+5. Portuguese (on test. Need support from native speakers). 
 
 
 ##  Installation Instructions
