@@ -63,7 +63,7 @@ distinct_keywords.get_keywords(doc)
   ```
 ## Output
 
-[['machine learning',
+['machine learning',
  'pairs',
  'mapping',
  'vector',
@@ -74,7 +74,7 @@ distinct_keywords.get_keywords(doc)
  'task',
  'algorithm',
  'unseen',
- 'training']]
+ 'training']
 
 ```
 from distinct_keywords.keywords import DistinctKeywords
@@ -99,7 +99,7 @@ docs = ["""Supervised learning is the machine learning task of learning a functi
 
 distinct_keywords=DistinctKeywords()
 
-distinct_keywords.get_keywords(docs)
+distinct_keywords.get_multiple_doc_keywords(docs)
 ```
 ## Output
 
