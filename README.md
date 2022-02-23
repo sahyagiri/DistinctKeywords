@@ -1,5 +1,5 @@
 
-[![PyPI](https://img.shields.io/pypi/dm/distinct-keywords.svg)](https://pypi.org/project/distinct-keywords/)
+[![Downloads](https://static.pepy.tech/personalized-badge/distinct-keywords?period=total&units=international_system&left_color=black&right_color=orange&left_text=Downloads)](https://pepy.tech/project/distinct-keywords)
 [![Latest Version](https://img.shields.io/pypi/v/distinct-keywords.svg?maxAge=86400)](https://pypi.org/project/distinct-keywords)
 [![Supported Python Versions](https://img.shields.io/pypi/pyversions/distinct-keywords.svg?maxAge=86400)](https://pypi.org/project/distinct-keywords)
 [![License](https://img.shields.io/pypi/l/distinct-keywords.svg?maxAge=86400)](https://pypi.org/project/distinct-keywords)
