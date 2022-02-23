@@ -3,7 +3,6 @@
 [![Latest Version](https://img.shields.io/pypi/v/distinct-keywords.svg?maxAge=86400)](https://pypi.org/project/distinct-keywords)
 [![Supported Python Versions](https://img.shields.io/pypi/pyversions/distinct-keywords.svg?maxAge=86400)](https://pypi.org/project/distinct-keywords)
 [![License](https://img.shields.io/pypi/l/distinct-keywords.svg?maxAge=86400)](https://pypi.org/project/distinct-keywords)
-[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 [![Stars](https://img.shields.io/github/stars/sahyagiri/DistinctKeywords?style=plastic)
 
 #  DistinctKeywords
