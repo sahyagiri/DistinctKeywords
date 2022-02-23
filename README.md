@@ -2,6 +2,7 @@
 [![PyPI](https://img.shields.io/pypi/dm/distinct-keywords.svg)](https://pypi.org/project/distinct-keywords/)
 [![Latest Version](https://img.shields.io/pypi/v/distinct-keywords.svg?maxAge=86400)](https://pypi.org/project/distinct-keywords)
 [![Supported Python Versions](https://img.shields.io/pypi/pyversions/distinct-keywords.svg?maxAge=86400)](https://pypi.org/project/distinct-keywords)
+[![License](https://img.shields.io/pypi/l/distinct-keywords.svg?maxAge=86400)](https://pypi.org/project/distinct-keywords)
 #  DistinctKeywords
 
 This is a utility function to extract semantically distinct keywords. This is an unsupervised method based on word2vec. Current implementation used a word2vec model trained in simplewiki(for English). Other language models and their sources are given below. 
