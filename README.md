@@ -24,24 +24,23 @@ Please visit the [blog post](https://dossiers.page/semantically-distinct-key-phr
 
 ##  Installation Instructions
 
-1. conda create -n keyphrases python=3.8 --no-default-packages
+1. `conda create -n keyphrases python=3.8 --no-default-packages`
 
-2. conda activate keyphrases
+2. `conda activate keyphrases`
 
-3. pip install distinct-keywords
+3. `pip install distinct-keywords`
 
-4. python -m spacy download en_core_web_sm
+4. `python -m spacy download en_core_web_sm`
 
-5. conda install --channel=conda-forge nb_conda_kernels jupyter
+5. `conda install --channel=conda-forge nb_conda_kernels jupyter`
+
 6. Optional multi-lingual support 
 
-        ```
         import nltk
 
         nltk.download('omw')
-
-        ```
-7. jupyter notebook
+	
+7. `jupyter notebook`
 
 
 ##  Getting started
